@@ -1,0 +1,6 @@
+#pragma once
+#include <ntifs.h>
+
+NTSTATUS CreateCall(PDEVICE_OBJECT pOb, PIRP pIRP);
+NTSTATUS CloseCall(PDEVICE_OBJECT pOb, PIRP pIRP);
+NTSTATUS IoAction(PDEVICE_OBJECT pOb, PIRP pIRP);
