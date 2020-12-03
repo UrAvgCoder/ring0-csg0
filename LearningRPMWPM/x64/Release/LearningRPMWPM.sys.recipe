@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>E:\kernel Development\LearningRPMWPM\x64\Release\LearningRPMWPM.sys</FullPath>
+      <FullPath>E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM.sys</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />

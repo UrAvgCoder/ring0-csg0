@@ -13,7 +13,7 @@ ULONG memory::get_process_id(const char* process_name)
                     process_id = pe.th32ProcessID;
                     break;
                 }
-            } while (Process32First(ss, &pe));
+            } while (Process32Next(ss, &pe));
         }
         CloseHandle(ss);
     }

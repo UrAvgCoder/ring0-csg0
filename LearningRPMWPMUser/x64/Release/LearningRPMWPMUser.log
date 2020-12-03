@@ -1,10 +1,8 @@
 ﻿cl : command line warning D9025: overriding '/sdl' with '/GS-'
   cheat.cpp
-  driver_interface.cpp
-  memory.cpp
-  Source.cpp
   Generating code
-  Previous IPDB not found, fall back to full compilation.
-  All 15 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  5 of 18 functions (27.8%) were compiled, the rest were copied from previous compilation.
+    3 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  LearningRPMWPMUser.vcxproj -> E:\kernel Development\LearningRPMWPM\x64\Release\LearningRPMWPMUser.exe
+  LearningRPMWPMUser.vcxproj -> E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPMUser.exe

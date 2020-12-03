@@ -1,1 +1,1 @@
-E:\kernel Development\LearningRPMWPM\x64\Release\LearningRPMWPM.sys
+E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM.sys

@@ -35,18 +35,18 @@ NTSTATUS IoAction(PDEVICE_OBJECT pOb, PIRP pIRP)
 		DbgPrintEx(0, 0, "get clientbase IOCTL called\n");
 		PEPROCESS target_process = NULL;
 		if (NT_SUCCESS(PsLookupProcessByProcessId((HANDLE)buffer->pid, &target_process))) {
+			DbgPrintEx(0, 0, "works here?\n");
 			KAPC_STATE apc;
 			KeStackAttachProcess(target_process, &apc);
 			ULONG base = memory::get_module_base(target_process, L"client.dll");
 			KeUnstackDetachProcess(&apc);
+			DbgPrintEx(0, 0, "base value in comms: %x", base);
 			if (base) {
 				buffer->client_base = base;
 				status = STATUS_SUCCESS;
 				bytes = sizeof(SkernelGetBase);
 			}
 		}
-		status = STATUS_INVALID_PARAMETER;
-		bytes = 0;
 	}
 	/*else if (stack->Parameters.DeviceIoControl.IoControlCode == DIFF_CODE) {
 		DbgPrintEx(0, 0, "Subtraction called\n");

@@ -1,16 +1,13 @@
 ﻿  Building 'LearningRPMWPM' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
   Stamping x64\Release\LearningRPMWPM.inf
-  Stamping [Version] section with DriverVer=12/03/2020,23.32.7.926
+  Stamping [Version] section with DriverVer=12/04/2020,0.17.28.53
   communication.cpp
-  memory.cpp
-  Source.cpp
-  Generating Code...
-  LearningRPMWPM.vcxproj -> E:\kernel Development\LearningRPMWPM\x64\Release\LearningRPMWPM.sys
+  LearningRPMWPM.vcxproj -> E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM.sys
   Done Adding Additional Store
-  Successfully signed: E:\kernel Development\LearningRPMWPM\x64\Release\LearningRPMWPM.sys
+  Successfully signed: E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM.sys
   
   Driver is 'Universal'.
-  ........................
+  .........................
   Signability test complete.
   
   Errors:
@@ -20,7 +17,7 @@
   None
   
   Catalog generation complete.
-  E:\kernel Development\LearningRPMWPM\x64\Release\LearningRPMWPM\learningrpmwpm.cat
+  E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM\learningrpmwpm.cat
   Done Adding Additional Store
-  Successfully signed: E:\kernel Development\LearningRPMWPM\x64\Release\LearningRPMWPM\learningrpmwpm.cat
+  Successfully signed: E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM\learningrpmwpm.cat
   
