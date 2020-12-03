@@ -48,6 +48,13 @@ NTSTATUS IoAction(PDEVICE_OBJECT pOb, PIRP pIRP)
 			}
 		}
 	}
+	else if (stack->Parameters.DeviceIoControl.IoControlCode == READ_REQ) {
+		pKernelReadRequest buffer = (pKernelReadRequest)pIRP->AssociatedIrp.SystemBuffer;
+		PEPROCESS target_process = NULL;
+		if (NT_SUCCESS(PsLookupProcessByProcessId((HANDLE)buffer->pid, &target_process))) {
+			memory::read_memory(target_process, &buffer->address, &buffer->response, buffer->size);
+		}
+	}
 	/*else if (stack->Parameters.DeviceIoControl.IoControlCode == DIFF_CODE) {
 		DbgPrintEx(0, 0, "Subtraction called\n");
 		buffer->diff = buffer->numberOne - buffer->numberTwo;

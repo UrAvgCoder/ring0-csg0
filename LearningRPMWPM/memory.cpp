@@ -28,3 +28,15 @@ ULONG memory::get_module_base(PEPROCESS process, LPCWSTR module_name)
     return 0;
 }
 
+NTSTATUS memory::read_memory(PEPROCESS target_process, void* source, void* target, size_t size)
+{
+    if (!target_process) { return STATUS_INVALID_PARAMETER; }
+
+    size_t bytes = 0;
+    NTSTATUS status = MmCopyVirtualMemory(target_process, source, IoGetCurrentProcess(), target, size, KernelMode, &bytes);
+    if (!NT_SUCCESS(status) || !bytes) {
+        return STATUS_INVALID_ADDRESS;
+    }
+    return status;
+}
+
