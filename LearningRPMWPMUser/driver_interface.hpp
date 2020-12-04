@@ -31,6 +31,14 @@ namespace driver_interface {
 	template<typename t>
 	void write_memory(ULONG process_id, ULONG address, t buffer)
 	{
+		KernelWriteRequest info = { 0 };
+		info.pid = process_id;
+		info.address = address;
+		info.value = buffer;
+		info.size = sizeof(t);
+		auto bytes = 0UL;
+		HANDLE hDevice = get_device("\\\\.\\pavanLink");
+		DeviceIoControl(hDevice, WRITE_REQ, &info, sizeof(info), &info, sizeof(info), &bytes, NULL);
 	}
 
 }

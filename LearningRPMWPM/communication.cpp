@@ -61,6 +61,16 @@ NTSTATUS IoAction(PDEVICE_OBJECT pOb, PIRP pIRP)
 		}
 
 	}
+	else if (stack->Parameters.DeviceIoControl.IoControlCode == WRITE_REQ) {
+		pKernelWriteRequest buffer = (pKernelWriteRequest)pIRP->AssociatedIrp.SystemBuffer;
+		PEPROCESS target_process = NULL;
+		if (NT_SUCCESS(PsLookupProcessByProcessId((HANDLE)buffer->pid, &target_process))) {
+			memory::write_memory(target_process, &buffer->value, (PVOID)buffer->address, buffer->size);
+			DbgPrintEx(0, 0, "Write Params: %lu, %#010x \n", buffer->value, buffer->address);
+			status = STATUS_SUCCESS;
+			bytes = sizeof(KernelWriteRequest);
+		}
+	}
 	/*else if (stack->Parameters.DeviceIoControl.IoControlCode == DIFF_CODE) {
 		DbgPrintEx(0, 0, "Subtraction called\n");
 		buffer->diff = buffer->numberOne - buffer->numberTwo;

@@ -1,19 +1,9 @@
 ﻿  Building 'LearningRPMWPM' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
   Stamping x64\Release\LearningRPMWPM.inf
-  Stamping [Version] section with DriverVer=12/04/2020,1.45.57.400
-  LearningRPMWPM.vcxproj -> E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM.sys
-  Driver is 'Universal'.
-  .........................
-  Signability test complete.
-  
-  Errors:
-  None
-  
-  Warnings:
-  None
-  
-  Catalog generation complete.
-  E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM\learningrpmwpm.cat
-  Done Adding Additional Store
-  Successfully signed: E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM\learningrpmwpm.cat
-  
+  Stamping [Version] section with DriverVer=12/04/2020,12.8.9.557
+  communication.cpp
+  memory.cpp
+  Source.cpp
+  Generating Code...
+  LearningRPMWPM.vcxproj -> E:\kernel Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM.sys
+C:\Program Files (x86)\Windows Kits\10\build\WindowsDriver.common.targets(1435,5): error : Invalid argument <CN="WDKTestCert Another User,132514926414867388" | 27F22EFD094EFB435217B73E2413FF10B4231564> for property <TestCertificate>.

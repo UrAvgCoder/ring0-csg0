@@ -31,13 +31,20 @@ ULONG memory::get_module_base(PEPROCESS process, LPCWSTR module_name)
 NTSTATUS memory::read_memory(PEPROCESS target_process, PVOID source, PVOID target, size_t size)
 {
     if (!target_process) { return STATUS_INVALID_PARAMETER; }
-    DbgPrintEx(0, 0, "BEFORE source addr: %p", source);
-    DbgPrintEx(0, 0, "BEFORE target addr: %p", target);
-    //DbgPrintEx(0, 0, "BEFORE target addr: %d", size);
     size_t bytes = 0;
     NTSTATUS status = MmCopyVirtualMemory(target_process, source, PsGetCurrentProcess(), target, size, KernelMode, &bytes);
-    DbgPrintEx(0, 0, "source addr: %p", source);
-    DbgPrintEx(0, 0, "target addr: %p", target);
+    if (!NT_SUCCESS(status) || !bytes) {
+        return STATUS_INVALID_ADDRESS;
+    }
+    return status;
+}
+
+NTSTATUS memory::write_memory(PEPROCESS target_process, PVOID source, PVOID target, size_t size)
+{
+    if (!target_process) { return STATUS_INVALID_PARAMETER; }
+    
+    size_t bytes = 0;
+    NTSTATUS status = MmCopyVirtualMemory(IoGetCurrentProcess(), source, target_process, target, size, KernelMode, &bytes);
     if (!NT_SUCCESS(status) || !bytes) {
         return STATUS_INVALID_ADDRESS;
     }
