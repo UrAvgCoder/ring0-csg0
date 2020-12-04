@@ -1,4 +1,4 @@
-# ring0-csgo
+# ring0-csg0
 A simple csgo project working in ring0
 
 ## Information ##
