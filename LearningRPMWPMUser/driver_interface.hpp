@@ -24,9 +24,8 @@ namespace driver_interface {
 		auto bytes = 0UL;
 		HANDLE hDevice = get_device("\\\\.\\pavanLink");
 		if (DeviceIoControl(hDevice, READ_REQ, &info, sizeof(info), &info, sizeof(info), &bytes, NULL)) {
-			return (t)info.response;
+			return info.response;
 		}
-		return 0;
 	}
 
 	template<typename t>
