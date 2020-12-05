@@ -13,6 +13,7 @@ namespace driver_interface {
 	template<typename t>
 	void write_memory(ULONG process_id, ULONG address, t buffer);
 
+	void write_memory_struct(ULONG process_id, ULONG address, SGlowStruct buffer);
 
 	template<typename t>
 	t read_memory(ULONG process_id, ULONG address)
@@ -24,7 +25,7 @@ namespace driver_interface {
 		auto bytes = 0UL;
 		HANDLE hDevice = get_device("\\\\.\\pavanLink");
 		if (DeviceIoControl(hDevice, READ_REQ, &info, sizeof(info), &info, sizeof(info), &bytes, NULL)) {
-			return info.response;
+			return *(t*)&info.response;
 		}
 	}
 
@@ -40,5 +41,6 @@ namespace driver_interface {
 		HANDLE hDevice = get_device("\\\\.\\pavanLink");
 		DeviceIoControl(hDevice, WRITE_REQ, &info, sizeof(info), &info, sizeof(info), &bytes, NULL);
 	}
+
 
 }

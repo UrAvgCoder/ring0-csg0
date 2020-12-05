@@ -152,6 +152,7 @@
     <ClInclude Include="cheat.hpp" />
     <ClInclude Include="definitions.hpp" />
     <ClInclude Include="driver_interface.hpp" />
+    <ClInclude Include="GlowStructure.hpp" />
     <ClInclude Include="memory.hpp" />
     <ClInclude Include="offsets.hpp" />
   </ItemGroup>

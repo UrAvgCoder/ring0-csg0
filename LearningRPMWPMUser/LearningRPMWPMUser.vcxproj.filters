@@ -44,5 +44,8 @@
     <ClInclude Include="driver_interface.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="GlowStructure.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
