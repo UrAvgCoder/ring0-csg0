@@ -1,18 +1,112 @@
 ﻿cl : command line warning D9025: overriding '/sdl' with '/GS-'
-  cheat.cpp
-E:\kernel Development\ring0-csgo\LearningRPMWPMUser\driver_interface.hpp(38,16): warning C4244: '=': conversion from 't' to 'ULONG', possible loss of data
+  Source.cpp
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(12,50): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(22,91): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(22,67): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(23,129): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(23,59): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(26,92): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(26,68): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(27,75): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(27,51): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(28,124): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(28,61): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(29,65): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(30,68): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(31,52): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(41,108): warning C4244: 'argument': conversion from 'ULONG' to 't', possible loss of data
+          with
+          [
+              t=float
+          ]
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(41,101): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(41,43): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(42,108): warning C4244: 'argument': conversion from 'ULONG' to 't', possible loss of data
+          with
+          [
+              t=float
+          ]
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(42,101): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(42,43): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(43,108): warning C4244: 'argument': conversion from 'ULONG' to 't', possible loss of data
+          with
+          [
+              t=float
+          ]
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(43,101): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(43,43): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(44,109): warning C4244: 'argument': conversion from 'ULONG' to 't', possible loss of data
+          with
+          [
+              t=float
+          ]
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(44,101): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(44,43): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(45,100): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(45,42): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(46,100): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(46,42): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(49,108): warning C4244: 'argument': conversion from 'ULONG' to 't', possible loss of data
+          with
+          [
+              t=float
+          ]
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(49,101): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(49,43): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(50,108): warning C4244: 'argument': conversion from 'ULONG' to 't', possible loss of data
+          with
+          [
+              t=float
+          ]
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(50,101): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(50,43): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(51,108): warning C4244: 'argument': conversion from 'ULONG' to 't', possible loss of data
+          with
+          [
+              t=float
+          ]
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(51,101): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(51,43): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(52,109): warning C4244: 'argument': conversion from 'ULONG' to 't', possible loss of data
+          with
+          [
+              t=float
+          ]
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(52,101): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(52,43): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(53,100): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(53,42): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(54,100): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(54,42): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(61,91): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(61,67): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(62,90): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(62,66): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(65,70): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(65,45): warning C4244: 'argument': conversion from 'uintptr_t' to 'ULONG', possible loss of data
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\driver_interface.hpp(38,16): warning C4244: '=': conversion from 't' to 'ULONG', possible loss of data
+          with
+          [
+              t=float
+          ]
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(41): message : see reference to function template instantiation 'void driver_interface::write_memory<float>(ULONG,ULONG,t)' being compiled
+          with
+          [
+              t=float
+          ]
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\driver_interface.hpp(38,16): warning C4244: '=': conversion from 't' to 'ULONG', possible loss of data
           with
           [
               t=uintptr_t
           ]
-E:\kernel Development\ring0-csgo\LearningRPMWPMUser\cheat.cpp(37): message : see reference to function template instantiation 'void driver_interface::write_memory<uintptr_t>(ULONG,ULONG,t)' being compiled
+E:\Driver Development\ring0-csgo\LearningRPMWPMUser\Source.cpp(65): message : see reference to function template instantiation 'void driver_interface::write_memory<uintptr_t>(ULONG,ULONG,t)' being compiled
           with
           [
               t=uintptr_t
           ]
   Generating code
-  2 of 24 functions ( 8.3%) were compiled, the rest were copied from previous compilation.
+  0 of 22 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
     0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
-  LearningRPMWPMUser.vcxproj -> E:\kernel Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPMUser.exe
+  LearningRPMWPMUser.vcxproj -> E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPMUser.exe
