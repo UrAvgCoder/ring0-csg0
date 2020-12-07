@@ -21,14 +21,14 @@ ULONG driver_interface::get_client_base(ULONG process_id)
     return 0;
 }
 
-void driver_interface::write_memory_struct(ULONG process_id, ULONG address, SGlowStruct buffer)
-{
-    KernelWriteStructRequest info = { 0 };
-    info.pid = process_id;
-    info.address = address;
-    info.value = buffer;
-    info.size = sizeof(SGlowStruct);
-    auto bytes = 0UL;
-    HANDLE hDevice = get_device("\\\\.\\pavanLink");
-    DeviceIoControl(hDevice, WRITE_REQ, &info, sizeof(info), &info, sizeof(info), &bytes, NULL);
-}
+//void driver_interface::write_memory_struct(ULONG process_id, ULONG address, SGlowStruct buffer)
+//{
+//    KernelWriteStructRequest info = { 0 };
+//    info.pid = process_id;
+//    info.address = address;
+//    info.value = buffer;
+//    info.size = sizeof(SGlowStruct);
+//    auto bytes = 0UL;
+//    HANDLE hDevice = get_device("\\\\.\\pavanLink");
+//    DeviceIoControl(hDevice, WRITE_REQ, &info, sizeof(info), &info, sizeof(info), &bytes, NULL);
+//}

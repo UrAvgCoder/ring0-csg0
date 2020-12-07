@@ -2,5 +2,6 @@
 <Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <TestCertificate>CN="WDKTestCert Another User,132514926414867388" | 27F22EFD094EFB435217B73E2413FF10B4231564</TestCertificate>
+    <SignMode>Off</SignMode>
   </PropertyGroup>
 </Project>

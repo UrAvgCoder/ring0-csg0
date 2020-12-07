@@ -1,6 +1,7 @@
 #pragma once
 
 #include "definitions.hpp"
+#include "GlowStructure.hpp"
 #include <TlHelp32.h>
 
 

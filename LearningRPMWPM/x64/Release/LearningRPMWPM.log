@@ -1,19 +1,12 @@
 ﻿  Building 'LearningRPMWPM' with toolset 'WindowsKernelModeDriver10.0' and the 'Universal' target platform.
   Stamping x64\Release\LearningRPMWPM.inf
-  Stamping [Version] section with DriverVer=12/04/2020,14.46.13.920
+  Stamping [Version] section with DriverVer=12/07/2020,20.2.53.562
+  communication.cpp
+  memory.cpp
+  Source.cpp
+E:\Driver Development\ring0-csgo\LearningRPMWPM\Source.cpp(51,74): warning C4100: 'pRegistryPath': unreferenced formal parameter
+E:\Driver Development\ring0-csgo\LearningRPMWPM\Source.cpp(51,40): warning C4100: 'pDriverObject': unreferenced formal parameter
+E:\Driver Development\ring0-csgo\LearningRPMWPM\Source.cpp(54,15): warning C4189: 'status': local variable is initialized but not referenced
+  Generating Code...
   LearningRPMWPM.vcxproj -> E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM.sys
   Driver is 'Universal'.
-  .........................
-  Signability test complete.
-  
-  Errors:
-  None
-  
-  Warnings:
-  None
-  
-  Catalog generation complete.
-  E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM\learningrpmwpm.cat
-  Done Adding Additional Store
-  Successfully signed: E:\Driver Development\ring0-csgo\LearningRPMWPM\x64\Release\LearningRPMWPM\learningrpmwpm.cat
-  

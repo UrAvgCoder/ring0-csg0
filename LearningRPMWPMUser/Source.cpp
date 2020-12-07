@@ -5,18 +5,6 @@ bool glowTeamCheck = false;
 
 uintptr_t process_id, client_base;
 
-int main() {	
-	process_id = memory::get_process_id("csgo.exe");
-	std::cout << "csgo pid found: " << process_id << std::endl;
-	Sleep(200);
-	client_base = driver_interface::get_client_base(process_id);
-	while (true) {
-		if (isGlow) {
-			glowESP();
-			bunnyHOP();
-		}
-	}
-}
 
 void glowESP() {
 	uintptr_t glowObject = driver_interface::read_memory< uintptr_t>(process_id, client_base + hazedumper::signatures::dwGlowObjectManager);
@@ -38,20 +26,22 @@ void glowESP() {
 		if (glow_current_dormant == 1 || entTeam == 0) continue;
 		else {
 			if (myTeam == entTeam) {
-				driver_interface::write_memory<float>(process_id, glowObject + (glow_current_glow_index * 0x38) + 0x4, coloroff);
-				driver_interface::write_memory<float>(process_id, glowObject + (glow_current_glow_index * 0x38) + 0x8, coloron);
-				driver_interface::write_memory<float>(process_id, glowObject + (glow_current_glow_index * 0x38) + 0xC, coloroff);
-				driver_interface::write_memory<float>(process_id, glowObject + (glow_current_glow_index * 0x38) + 0x10, coloron);
-				driver_interface::write_memory<bool>(process_id, glowObject + (glow_current_glow_index * 0x38) + 0x24, false);
-				driver_interface::write_memory<bool>(process_id, glowObject + (glow_current_glow_index * 0x38) + 0x25, true);
+				SGlowStruct obj = driver_interface::read_memory<SGlowStruct>(process_id, glowObject + (glow_current_glow_index * 0x38));
+				obj.green = coloron;
+				obj.red = coloron;
+				obj.blue = coloron;
+				obj.alpha = 0.5f;
+				obj.renderwhenocculed = true;
+				obj.renderwhenunocculed = false;
+				driver_interface::write_memory<SGlowStruct>(process_id, glowObject + (glow_current_glow_index * 0x38), obj);
 			}
 			else {
-				driver_interface::write_memory<float>(process_id, glowObject + (glow_current_glow_index * 0x38) + 0x4, coloron);
-				driver_interface::write_memory<float>(process_id, glowObject + (glow_current_glow_index * 0x38) + 0x8, coloroff);
-				driver_interface::write_memory<float>(process_id, glowObject + (glow_current_glow_index * 0x38) + 0xC, coloroff);
-				driver_interface::write_memory<float>(process_id, glowObject + (glow_current_glow_index * 0x38) + 0x10, coloron);
-				driver_interface::write_memory<bool>(process_id, glowObject + (glow_current_glow_index * 0x38) + 0x24, true);
-				driver_interface::write_memory<bool>(process_id, glowObject + (glow_current_glow_index * 0x38) + 0x25, false);
+				SGlowStruct obj = driver_interface::read_memory<SGlowStruct>(process_id, glowObject + (glow_current_glow_index * 0x38));
+				obj.red = coloron;
+				obj.alpha = 0.7f;
+				obj.renderwhenocculed = true;
+				obj.renderwhenunocculed = false;
+				driver_interface::write_memory<SGlowStruct>(process_id, glowObject + (glow_current_glow_index * 0x38), obj);
 			}
 		}
 	}
@@ -63,5 +53,24 @@ void bunnyHOP() {
 
 	if ((GetAsyncKeyState(VK_SPACE) & 0x8000) && (is_jumping & (1 << 0))) {
 		driver_interface::write_memory<uintptr_t>(process_id, (client_base + hazedumper::signatures::dwForceJump), 6);
+	}
+}
+
+int main() {	
+	process_id = memory::get_process_id("csgo.exe");
+	std::cout << "csgo pid found: " << process_id << std::endl;
+	Sleep(200);
+	client_base = driver_interface::get_client_base(process_id);
+	while (true) {
+
+		if (GetAsyncKeyState(VK_F1) & 1) {
+			isGlow = !isGlow;
+		}
+		
+		if (isGlow) {
+			glowESP();
+			bunnyHOP();
+		}
+		Sleep(10);
 	}
 }

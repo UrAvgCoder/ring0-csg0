@@ -2,6 +2,7 @@
 #include "definitions.hpp"
 #include "memory.hpp"
 
+
 NTSTATUS CreateCall(PDEVICE_OBJECT pOb, PIRP pIRP)
 {
 	UNREFERENCED_PARAMETER(pOb);
@@ -71,6 +72,19 @@ NTSTATUS IoAction(PDEVICE_OBJECT pOb, PIRP pIRP)
 			bytes = sizeof(KernelWriteRequest);
 		}
 	}
+
+	else if (stack->Parameters.DeviceIoControl.IoControlCode == WRITE_STRUCT_REQ) {
+
+		const auto request = reinterpret_cast<driver_request*>(pIRP->AssociatedIrp.SystemBuffer);
+		PEPROCESS target_process = NULL;
+		if (NT_SUCCESS(PsLookupProcessByProcessId((HANDLE)request->pid, &target_process))) {
+			memory::write_memory(target_process, request->value, (PVOID)request->address, request->size);
+			status = STATUS_SUCCESS;
+			bytes = sizeof(driver_request);
+		}
+
+	}
+
 	/*else if (stack->Parameters.DeviceIoControl.IoControlCode == DIFF_CODE) {
 		DbgPrintEx(0, 0, "Subtraction called\n");
 		buffer->diff = buffer->numberOne - buffer->numberTwo;

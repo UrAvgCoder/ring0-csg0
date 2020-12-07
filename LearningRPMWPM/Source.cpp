@@ -1,8 +1,7 @@
-#include <ntifs.h>
 #include "Header.hpp"
 #include "communication.hpp"
 
-UNICODE_STRING deviceName, SymLink;
+UNICODE_STRING deviceName, SymLink, driver_name;
 
 VOID DriverUnload(PDRIVER_OBJECT pDriverObject)
 {
@@ -12,10 +11,10 @@ VOID DriverUnload(PDRIVER_OBJECT pDriverObject)
     IoDeleteSymbolicLink(&SymLink);
 }
 
-NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegistryPath)
+
+NTSTATUS DriverEntryTest(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegistryPath)
 {
     UNREFERENCED_PARAMETER(pRegistryPath);
-    pDriverObject->DriverUnload = &DriverUnload;
     DbgPrintEx(0, 0, "driver loaded\n");
 
     RtlInitUnicodeString(&deviceName, L"\\Device\\pavan");
@@ -38,6 +37,7 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegistryPath
     pDriverObject->MajorFunction[IRP_MJ_CREATE] = CreateCall;
     pDriverObject->MajorFunction[IRP_MJ_CLOSE] = CloseCall;
     pDriverObject->MajorFunction[IRP_MJ_DEVICE_CONTROL] = IoAction;
+    pDriverObject->DriverUnload = NULL;
 
     deviceObj->Flags |= DO_DIRECT_IO;
     deviceObj->Flags &= ~DO_DEVICE_INITIALIZING;
@@ -45,4 +45,12 @@ NTSTATUS DriverEntry(PDRIVER_OBJECT pDriverObject, PUNICODE_STRING pRegistryPath
     DbgPrintEx(0, 0, "driver entry complete...\n");
 
     return STATUS_SUCCESS;
+}
+
+
+NTSTATUS DriverEntry(IN PDRIVER_OBJECT pDriverObject, IN PUNICODE_STRING pRegistryPath)
+{   
+    	RtlInitUnicodeString(&driver_name, L"\\Driver\\pavandriver");
+    	NTSTATUS status = IoCreateDriver(&driver_name, &DriverEntryTest);
+    	return STATUS_SUCCESS;
 }

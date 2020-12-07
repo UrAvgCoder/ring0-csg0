@@ -35,12 +35,34 @@ namespace driver_interface {
 		KernelWriteRequest info = { 0 };
 		info.pid = process_id;
 		info.address = address;
-		info.value = buffer;
+		//info.value = buffer;
 		info.size = sizeof(t);
+		memcpy(info.value, &buffer, sizeof(t));
 		auto bytes = 0UL;
 		HANDLE hDevice = get_device("\\\\.\\pavanLink");
 		DeviceIoControl(hDevice, WRITE_REQ, &info, sizeof(info), &info, sizeof(info), &bytes, NULL);
 	}
 
+	template<typename T>
+	bool request_write(ULONG process_id, ULONG address, const T& data) {
+		static_assert(sizeof(T) > 0, "Nothing to write");
+		
+		constexpr size_t alloc_size = sizeof(driver_request) + sizeof(T) - 1;
+		std::array<uint8_t, alloc_size> request_buffer;
+		//std::array<uint8_t, alloc_size> test = { 0 };
+		const auto request = reinterpret_cast<driver_request*>(request_buffer.data());
+
+		request->address = address;
+		request->pid = process_id;
+		request->size = sizeof(T);
+
+		memcpy(request->value, &data, sizeof(T));
+		HANDLE hDevice = get_device("\\\\.\\pavanLink");
+		auto bytes = 0UL;
+		if (DeviceIoControl(hDevice, WRITE_STRUCT_REQ, request, sizeof(alloc_size), request, sizeof(alloc_size), &bytes, NULL))
+			return true;
+		else return false;
+		
+	}
 
 }

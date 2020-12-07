@@ -21,9 +21,6 @@
     <ClCompile Include="memory.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="cheat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="driver_interface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
