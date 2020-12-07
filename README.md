@@ -8,5 +8,5 @@ This project has nothing related to VAC or any violation of their Terms and Cond
 This project includes a ring0(kernel) driver which read/writes memory to CS:GO in a way that is undetected by VAC (for now). This driver communicates from kernel space to user space using IOCTL codes. Probably not the best way, but does the job. 
 
 ## Project Features ##
-The project has only BHOP for now, more coming soon..
-
+-> BHOP
+-> Enemy Glow (RED)
