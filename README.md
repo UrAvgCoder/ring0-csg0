@@ -12,5 +12,5 @@ This project includes a ring0(kernel) driver which read/writes memory to CS:GO i
 -> Enemy Glow (RED)
 
 
-## CREDITS ##
-- nbqofficial (https://github.com/nbqofficial) - For helping me out even on the basics without raging <3 Thank you!
+## Credits ##
+- nbqofficial (https://github.com/nbqofficial) - For the source code & helping me out even on the basics without raging <3 Thank you!
