@@ -10,3 +10,7 @@ This project includes a ring0(kernel) driver which read/writes memory to CS:GO i
 ## Project Features ##
 -> BHOP
 -> Enemy Glow (RED)
+
+
+## CREDITS ##
+- nbqofficial (https://github.com/nbqofficial) - For helping me out even on the basics without raging <3 Thank you!
